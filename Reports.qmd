@@ -1,0 +1,93 @@
+---
+title: "Project step 5: Communication.qmd"
+author: "Sulmi Hong"
+editor: visual
+bibliography: "bibliography.bib"
+---
+
+## Central Theme:
+
+-   The central theme of the planned research is the effective translation of culturally referenced expressions (CRs) within the context of Wake Forest University (WFU) and broader American culture. The research question revolves around identifying translation strategies for CRs in promotional texts like university handbooks and exploring their significance in ensuring accurate and culturally appropriate translations. The data preparation strategy involves collecting examples of CRs from the WFU handbook and analyzing them to understand the challenges and nuances involved in their translation. The analysis plan includes applying various translation methodologies such as explication, cultural substitution, transliteration, addition, and intersemiotic translation to translate CRs effectively.
+
+## Potential Significance:
+
+-   The planned research has the potential to contribute significantly to the field of translation studies by addressing the challenges of translating CRs in the higher education domain. By identifying and analyzing translation strategies specific to CRs, the research can enhance the understanding of how cultural nuances are conveyed through language and translation. This understanding can benefit translators, educators, and researchers in developing more effective translation practices and strategies. Additionally, the research can help bridge cultural gaps and promote cross-cultural understanding in academic and promotional contexts.
+
+## Key Takeaways:
+
+-   The key takeaway from the research is the importance of considering cultural references and expressions in translation to ensure accurate and culturally appropriate communication. By highlighting the challenges and complexities involved in translating CRs, the research underscores the need for translators to employ Skopos theory and diverse translation strategies tailored to the preferences and cultural background of the target audience. The research also emphasizes the significance of maintaining cultural sensitivity and appropriateness in translation to enhance readability, relevance, and engagement with the translated text.
+
+## Audience:
+
+-   The audience for the presentation includes translators, educators, researchers, and students interested in translation studies, cultural studies, and cross-cultural communication. Their interests lie in understanding the challenges and strategies involved in translating CRs, particularly in the context of higher education and promotional materials. The audience's needs include gaining insights into effective translation practices, learning about cultural nuances in language, and exploring ways to promote cross-cultural understanding through translation.
+
+## Key Messages:
+
+-   The key messages to convey to the audience include the importance of considering cultural references and expressions in translation, the challenges involved in translating CRs, and the significance of employing diverse translation strategies to ensure accurate and culturally appropriate communication. Additionally, the presentation aims to highlight the potential impact of effective translation practices on promoting cross-cultural understanding and enhancing communication in academic and promotional contexts.
+
+## Audience Interaction:
+
+-   The presenter seeks feedback and engagement from the audience to foster discussion and exchange of ideas regarding translation strategies, cultural nuances, and cross-cultural communication. Audience participation in sharing their experiences, challenges, and insights related to translation studies enriches the discussion and enhances learning opportunities for all participants. Collaboration opportunities may arise from identifying common challenges and exploring potential solutions together.
+
+### Draft a presentation
+
+### Brainstorming prospectus revision
+
+-The feedback from instructors highlighted several key takeaways for improving the presentation. One key takeaway was the study proved that WFU handbook is aligned with Gen Z's expectation on conversational communication that creates an interactive impression by using the second-person pronoun. However,this study was constrained in its capacity to investigate whether the utilization of the second-person pronoun "you" engenders equivalent interactive impressions among the Chinese Generation Z demographic. Moreover, if such equivalence exists, the inquiry into efficacious methods for mitigating the phenomenon of pronoun drop attributable to linguistic disparities remains unaddressed.
+
+Resources or Support Needed:
+
+-   To finalize the research plan, I may need access to additional resources such as academic journals, books, or online databases for literature review and data collection. Additionally, seeking guidance and support from mentors, advisors, or faculty members can provide valuable insights and feedback on the research plan. Collaborating with peers or colleagues in the field of translation studies can also offer perspectives and ideas for enhancing the research plan.
+
+## Assessing your progress
+
+Reflecting on the Process:
+
+-   What I Learned: Through this process, although I had difficulty to actually write codes to run, I knew R studio is much more reliable platform compare to Chat gpt. This is because I tried to do text analysis before the study. Frequently used words were identified. The text analysis reveals the top 12 most frequently appearing words in the source text, along with their frequency counts. By analyzing word frequency, translators can better capture the essence of the source text and produce a high-quality translation. As a coding illiterate, I first used chat gpt to do this task. However, I was skeptical of how accurate the result is. Since Chat gpt has limitation on the quantity of data that it can read and analyze, I decided to use R studio to replicate the same task. By doing this, I was able to get the result that from the source text. 
+
+```{r}
+#| lable: Twelve Most-Frequently Used Words in WFU Student Handbook
+#| echo: false
+#| message: false
+
+# Read the text file
+text <- readLines("ARP.txt")
+
+# Convert text to lowercase and split into words
+words <- unlist(strsplit(tolower(text), "\\W+"))
+
+# Remove empty strings
+words <- words[words != ""]
+
+# Calculate word frequencies
+word_freq <- table(words)
+
+# Find the top 12 frequently appearing words
+top_words <- head(sort(word_freq, decreasing = TRUE), 12)
+
+# Print the top 12 words
+print(top_words)
+
+# Creat a table using 
+# Create a dataframe with the words and their frequencies
+
+word_frequencies <- data.frame(
+  Word = c("the", "and", "to", "a", "of", "you", "in", "for", "your", "wake", "is", "forest"),
+  Frequency = c(176, 166, 127, 91, 80, 74, 64, 56, 55, 49, 48, 43)
+)
+
+# Load the knitr package
+library(knitr)
+
+# Print the dataframe with a formatted table
+kable(word_frequencies, align = c("l", "r"), col.names = c("Word", "Frequency"))
+```
+
+The studies @article have shown that Generation Z students, who have grown up with social networking sites, prefer more relaxed communication styles and expect universities to communicate in a manner that aligns with their own. They also value dialogue over monologue and seek to have their opinions heard and considered. It is in line with research findings regarding communication style preferences or student expectations, it is apparent that this preference for a conversational tone and personalized communication is reflected in WFU handbooks.
+In above table, "Wake" and "forest" appear multiple times, suggesting that these words are central to the topic or theme of the text. Articles and Prepositions like "the," "and," "to," "a," "of," and "in" are among the most frequent words. These are used to establish grammatical structure and relationships between words but do not carry specific meanings. Pronouns: "you"(74 times) and "your" (55 times) appear frequently, indicating a strong focus on addressing the reader directly. Moreover, research suggests that bureaucratic and formal communication styles may lead to misunderstandings and disengagement among students. As such, the student-centric approach observed in college handbooks, characterized by direct address to the reader and personalized communication, appears to resonate well with students' preferences and expectations. By comparing these research findings with the language features found in college handbooks, we can see a clear alignment between students' communication preferences and the communicative strategies employed by institutions in their handbooks.
+
+I gained a deeper understanding of the complexities involved in translating culturally referenced expressions and the importance of considering cultural nuances in translation. - Resources Consulted: I consulted academic journals, books, and online resources in the fields of translation studies, cultural studies, and language science to inform my research plan.
+
+Evaluation of Prospectus: - Evolution of Interests: My interests evolved as I delved deeper into the topic of translation studies and its application to culturally sensitive materials. - Evolution of Research Questions: While the core research questions remained consistent, the methodology and approach evolved based on feedback and further exploration of the topic. - Influencing Factors: Feedback from peers and the instructor influenced the refinement of research questions and methodology, leading to a more focused and comprehensive research plan.
+
+#Reference
